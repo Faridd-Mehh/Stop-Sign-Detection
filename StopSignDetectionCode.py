@@ -4,7 +4,7 @@ import os
 
 def pick_red_mask(src):
     hsv_img = cv.cvtColor(src, cv.COLOR_BGR2HSV)
-    mean_v = float(np.mean(hsv_img[:, :, 2]))  # tüm piksellerin ortalaması
+    mean_v = float(np.mean(hsv_img[:, :, 2]))  # avg of all pixels
 
     if mean_v < 90:
         low1 = np.array([0, 30, 30])
@@ -86,3 +86,4 @@ for i, img in enumerate(stack, start=1):
 
 cv.waitKey(0)
 cv.destroyAllWindows()
+
